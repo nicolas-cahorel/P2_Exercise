@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <!-- AFFICHAGE DES ANIMAUX SUR L'ECRAN DETAIL-->
+
+            <!-- Affichage du nom + avatar de l'animal -->
+            <ImageView
+                android:id="@+id/imageView_avatar"
+                android:layout_width="match_parent"
+                android:layout_height="260dp"
+                android:layout_margin="10dp"
+                android:contentDescription="avatar de l'animal"
+                android:scaleType="centerCrop"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/img_dog" />
+
+            <TextView
+                android:id="@+id/textView_name"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
+                android:paddingStart="25dp"
+                android:paddingEnd="25dp"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                app:layout_constraintBottom_toBottomOf="@id/imageView_avatar"
+                app:layout_constraintEnd_toEndOf="@id/imageView_avatar"
+                app:layout_constraintStart_toStartOf="@id/imageView_avatar"
+                tools:text="Milou" />
+
+
+            <!-- Affichage de l'age (+ logo) de l'animal -->
+            <ImageView
+                android:id="@+id/logo_age"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="80dp"
+                android:layout_marginTop="30dp"
+                android:contentDescription="logo age"
+                android:src="@drawable/ic_age"
+                app:layout_constraintStart_toStartOf="@id/imageView_avatar"
+                app:layout_constraintTop_toBottomOf="@id/imageView_avatar"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView_age"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/logo_age"
+                app:layout_constraintStart_toStartOf="@id/logo_age"
+                app:layout_constraintTop_toBottomOf="@id/logo_age"
+                tools:text="6 ans" />
+
+
+            <!-- Affichage du poids (+ logo) de l'animal -->
+            <ImageView
+                android:id="@+id/logo_weight"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="80dp"
+                android:contentDescription="logo poids"
+                android:src="@drawable/ic_weight"
+                app:layout_constraintEnd_toEndOf="@id/imageView_avatar"
+                app:layout_constraintTop_toBottomOf="@id/imageView_avatar"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView_weight"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/logo_weight"
+                app:layout_constraintStart_toStartOf="@id/logo_weight"
+                app:layout_constraintTop_toBottomOf="@id/logo_weight"
+                tools:text="23.2 (Kg)" />
+
+
+            <!-- Affichage de la taille (+ logo) de l'animal -->
+            <ImageView
+                android:id="@+id/logo_height"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="20dp"
+                android:contentDescription="logo taille"
+                android:src="@drawable/ic_height"
+                app:layout_constraintEnd_toStartOf="@+id/logo_weight"
+                app:layout_constraintStart_toEndOf="@id/logo_age"
+                app:layout_constraintTop_toBottomOf="@+id/textView_age"
+                app:tint="@color/black" />
+
+            <TextView
+                android:id="@+id/textView_height"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:textSize="14sp"
+                app:layout_constraintEnd_toEndOf="@id/logo_height"
+                app:layout_constraintStart_toStartOf="@id/logo_height"
+                app:layout_constraintTop_toBottomOf="@id/logo_height"
+                tools:text="42.4 (cm)" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    </androidx.core.widget.NestedScrollView>
+
+    <androidx.appcompat.widget.LinearLayoutCompat
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/description_button_edit"
+            app:icon="@android:drawable/ic_menu_edit" />
+
+        <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
+            android:id="@+id/fab_delete"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:text="@string/description_button_delete"
+            android:textColor="@color/white"
+            app:backgroundTint="@android:color/holo_red_dark"
+            app:icon="@android:drawable/ic_delete"
+            app:iconTint="@color/white" />
+
+    </androidx.appcompat.widget.LinearLayoutCompat>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
